@@ -12,7 +12,7 @@ function App() {
 
   const searchSongs = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/search/?q=${encodeURIComponent(query)}`);
+      const response = await fetch(`https://musicstream-backend-bed9.onrender.com/api/search/?q=${encodeURIComponent(query)}`);
       const data = await response.json();
 
       if (Array.isArray(data)) {
@@ -40,7 +40,7 @@ function App() {
   const addToPlaylist = async (video) => {
   const token = localStorage.getItem('token');
   try {
-    await fetch('http://127.0.0.1:8000/api/playlist/add/', {
+    await fetch('https://musicstream-backend-bed9.onrender.com/api/playlist/add/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
